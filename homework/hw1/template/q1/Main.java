@@ -71,6 +71,8 @@ public class Main {
                 e.printStackTrace();
             }
         }
+        long endTime = System.nanoTime();
+        executeTimeMS =  endTime - startTime;
 
 
 
