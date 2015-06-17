@@ -55,7 +55,7 @@ public class Main {
 
         // create threads
         for(int i = 0; i < threads.length; i++){
-            threads[i] = new counterThread(threadPid++, counter, numTotalInc );
+            threads[i] = new counterThread(threadPid++, counter, (numTotalInc / numThread) );
         }
 
         // batch submit all threads
