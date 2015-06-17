@@ -64,8 +64,14 @@ public class BakeryLock implements MyLock {
         this.number[myId] = 0;
     }
 
-    public void printInfo(String info){
-        System.out.println(this.getClass() + ":\t" + info);
+    public void printInfo(String info) {
+        boolean enable = false;
+        this.printInfo(enable, info);
+    }
+    public void printInfo(boolean enable, String info){
+        if(enable) {
+            System.out.println(this.getClass() + ":\t" + info);
+        }
         return;
     }
 }

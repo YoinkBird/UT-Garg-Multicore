@@ -20,8 +20,10 @@ public class LockCounter extends Counter {
     }
 
     public void printInfo(String info){
-        System.out.println(this.getClass() + ":\t" + info);
-        return;
+        boolean enable = true;
+        if(enable) {
+            System.out.println(this.getClass() + ":\t" + info);
+        }
     }
 
 }
