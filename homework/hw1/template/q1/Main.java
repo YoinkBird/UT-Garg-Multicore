@@ -75,6 +75,14 @@ public class Main {
         executeTimeMS =  endTime - startTime;
 
 
+        System.out.println(
+                "Summary:\n==========================\n"
+                + String.format("[counter] %d [numTotalInc] %d", counter.getCount(), numTotalInc)
+                + String.format("\ncounter.getCount() != (numTotalInc/numThread) * numThread")
+                + String.format("\n%d ?= (%d/%d) * %d", counter.getCount(), numTotalInc, numThread , numThread)
+                + String.format("\n%d ?= %d", counter.getCount(), (numTotalInc/numThread * numThread))
+                + String.format("\ntime: %d" , executeTimeMS)
+        );
 
         // all threads finish incrementing
         // Checking if the result is correct
