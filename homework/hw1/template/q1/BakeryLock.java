@@ -58,7 +58,8 @@ public class BakeryLock implements MyLock {
                             (j < myId)
                         )
                     )
-                  ); // busy wait until conditions are satisfied
+                  ){ System.out.print('.');}
+                  //  );
         }
         //System.out.println(this.toString()
         this.printInfo("lock [myId] " + myId);
