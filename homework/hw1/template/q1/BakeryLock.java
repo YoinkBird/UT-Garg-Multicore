@@ -58,7 +58,14 @@ public class BakeryLock implements MyLock {
                             (j < myId)
                         )
                     )
-                  ){ System.out.print('.');}
+                  ){
+                        //System.out.print('.');
+                       try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+            }
                   //  );
         }
         //System.out.println(this.toString()
