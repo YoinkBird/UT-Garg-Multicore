@@ -36,12 +36,19 @@ public class BakeryLock implements MyLock {
 
         // step2: check if my number is smallest
         // i.e. does this thread have priority
+        this.printInfo("lock get [myId] " + myId + " [numThread] " + this.numThread);
         for (int j = 0; j < this.numThread; j++){
-//            this.printInfo( " [myId] " + myId + " lock wait. [choosing] " + Arrays.toString(choosing));
-//            this.printInfo( " [j] " + j
-//                    + " [number[myId]] " + number[myId]
-//                    + " [number[j]] " + number[j]);
-            while(choosing[j]); // wait if another process "j" is in the doorway
+            this.printInfo(
+                    " [j] " + j
+                    + " [myId] " + myId
+                    // + " [number[myId]] " + number[myId]
+                    // + " [number[j]] " + number[j]
+                    //+ " [choosing[j]] " + choosing[j]
+                    + " number" + Arrays.toString(number)
+            );
+            // wait if another process "j" is in the doorway
+            while(choosing[j]);
+            // busy wait until conditions are satisfied
             while (
                     (number[j] != 0) &&
                     (
@@ -54,12 +61,12 @@ public class BakeryLock implements MyLock {
                   ); // busy wait until conditions are satisfied
         }
         //System.out.println(this.toString()
-        this.printInfo( " [myId] " + myId + " lock acquired" );
+        this.printInfo("lock [myId] " + myId);
     }
 
     @Override
     public void unlock(int myId) {
-        this.printInfo(" [myId] " + myId + " unlock" );
+        this.printInfo("unlock [myId] " + myId);
         // 0 indicates no longer in critical section
         this.number[myId] = 0;
     }

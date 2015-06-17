@@ -22,11 +22,6 @@ public class counterThread extends Thread {
     }
     public void run(){
         for (int n = 0; n < this.incNum; n++){
-            this.printInfo(
-            //System.out.println("counterThread: "
-                    " [myId] " + this.myId
-                    + " [startingCount] " + this.counter.getCount());
-            // TODO: this should all be in lockcounter
             this.counter.increment();
         }
     }

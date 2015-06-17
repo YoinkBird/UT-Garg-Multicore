@@ -14,13 +14,13 @@ public class LockCounter extends Counter {
         int myId = curThread.getMyId();
         this.lock.lock(myId);
         this.count++;
-        this.printInfo( " [count] " + this.count );
+        this.printInfo( " [count] " + this.count + " [myId] " + myId);
         this.lock.unlock(myId);
         return;
     }
 
     public void printInfo(String info){
-        boolean enable = true;
+        boolean enable = false;
         if(enable) {
             System.out.println(this.getClass() + ":\t" + info);
         }
