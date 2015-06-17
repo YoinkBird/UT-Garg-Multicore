@@ -84,6 +84,11 @@ public class Main {
           System.err.println(
                   String.format("[counter] %d [numTotalInc] %d", counter.getCount(), numTotalInc)
           );
+            System.err.println(
+                    String.format("counter.getCount() != (numTotalInc/numThread) * numThread")
+                    + String.format("\n%d != (%d/%d) * %d", counter.getCount(), numTotalInc, numThread , numThread)
+                    + String.format("\n%d != %d", counter.getCount(), (numTotalInc/numThread * numThread))
+                );
         } else {
           // print total execute time if the result is correct
           System.out.println(executeTimeMS);
