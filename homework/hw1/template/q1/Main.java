@@ -53,10 +53,9 @@ public class Main {
 
         System.out.println("main: [numThreads]" + numThread + "[numTotalInc]" + numTotalInc);
 
-        // create threads, set name
+        // create threads
         for(int i = 0; i < threads.length; i++){
-            threads[i] = new counterThread(threadPid++, counter, lock, numTotalInc );
-            //threads[i].setName(String.valueOf(threadPid++));
+            threads[i] = new counterThread(threadPid++, counter, numTotalInc );
         }
 
         // batch submit all threads
