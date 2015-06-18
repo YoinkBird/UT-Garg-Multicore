@@ -18,6 +18,9 @@ public class Main {
             System.exit(-1);
         }
 
+        numThread = Integer.parseInt(args[1]);
+        numTotalInc = Integer.parseInt(args[2]);
+
         if (args[0].equals("fast")) {
             lock = new FastMutexLock(numThread);
             counter = new LockCounter(lock);
@@ -33,8 +36,6 @@ public class Main {
             System.exit(-1);
         }
 
-        numThread = Integer.parseInt(args[1]);
-        numTotalInc = Integer.parseInt(args[2]);
 
         // TODO
         // Please create numThread threads to increment the counter
