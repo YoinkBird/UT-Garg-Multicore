@@ -40,7 +40,7 @@ public class FastMutexLock implements MyLock {
                     flag[myId].set(false);
                     // forall j:
                     for (int j = 0; j < flag.length; j++){
-                        while (flag[j].get() != true) ; //# waitUntil(flag[j] == down);
+                        while (flag[j].get() != false) ; //# waitUntil(flag[j] == down);
                     }
                     if (Y == myId){
                         return;  // slow path
